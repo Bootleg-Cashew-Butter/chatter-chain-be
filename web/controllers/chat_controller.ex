@@ -27,7 +27,7 @@ defmodule ChatterChain.ChatController do
   end
 
   def show(conn, %{"id" => id}) do
-    chat = Repo.get!(Chat, id)
+    chat = Repo.get!(Chat, id) |> Repo.preload([:users, :posts])
     render(conn, "show.json", chat: chat)
   end
 

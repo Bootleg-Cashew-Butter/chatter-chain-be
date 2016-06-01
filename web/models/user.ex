@@ -21,5 +21,12 @@ defmodule ChatterChain.User do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> foreign_key_constraint(:chat_id)
+    |> unique_constraint(:emoji, name: :special_emoji_chat_index)
+    |> unique_constraint(:username, name: :special_username_chat_index)
+  end
+
+  def unique_in_chat_constraint(changeset) do
+    
   end
 end
