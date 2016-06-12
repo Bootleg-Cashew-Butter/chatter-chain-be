@@ -1,6 +1,10 @@
 defmodule ChatterChain.PostView do
   use ChatterChain.Web, :view
 
+  location "/posts/:id"
+  attributes [:body, :isLink]
+  has_one :creator, field: :creator_id, type: "users"
+
   def render("index.json", %{posts: posts}) do
     %{data: render_many(posts, ChatterChain.PostView, "post.json")}
   end

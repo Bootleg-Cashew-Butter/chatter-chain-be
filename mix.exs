@@ -33,7 +33,8 @@ defmodule ChatterChain.Mixfile do
     [{:phoenix, "~> 1.0.3"},
      {:phoenix_ecto, "~> 1.1"},
      {:postgrex, ">= 0.0.0"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:ja_serializer, "~> 0.6.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

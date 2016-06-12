@@ -1,6 +1,10 @@
 defmodule ChatterChain.UserView do
   use ChatterChain.Web, :view
 
+  location "users/:id"
+  attributes [:emoji, :username]
+  has_one :chat, field: :chat_id, type: "chats"
+
   def render("index.json", %{users: users}) do
     %{data: render_many(users, ChatterChain.UserView, "user.json")}
   end

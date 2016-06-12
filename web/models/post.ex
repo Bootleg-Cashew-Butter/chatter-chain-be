@@ -4,7 +4,7 @@ defmodule ChatterChain.Post do
   schema "posts" do
     field :body, :string
     field :isLink, :boolean, default: false
-    belongs_to :creator, ChatterChain.Creator
+    belongs_to :creator, ChatterChain.User
     belongs_to :chat, ChatterChain.Chat
 
     timestamps

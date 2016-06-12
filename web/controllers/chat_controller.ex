@@ -1,7 +1,10 @@
 defmodule ChatterChain.ChatController do
   use ChatterChain.Web, :controller
+  import Ecto.Query, only: [from: 2]
 
   alias ChatterChain.Chat
+  alias ChatterChain.User
+  alias ChatterChain.Post
 
   plug :scrub_params, "chat" when action in [:create, :update]
 
